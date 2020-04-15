@@ -1,9 +1,9 @@
 {
   "groups": [
     {
-      "name": "googleclient",
-      "type": "com.matthenry87.restclients.privateresttemplate.GoogleClientConfig",
-      "sourceType": "com.matthenry87.restclients.privateresttemplate.GoogleClientConfig"
+      "name": "clientconfig",
+      "type": "com.matthenry87.restclients.multipleresttemplatebeans.ClientConfig",
+      "sourceType": "com.matthenry87.restclients.multipleresttemplatebeans.ClientConfig"
     }
   ],
   "properties": [],

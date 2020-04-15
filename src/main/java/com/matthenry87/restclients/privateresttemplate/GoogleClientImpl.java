@@ -1,6 +1,5 @@
 package com.matthenry87.restclients.privateresttemplate;
 
-import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestOperations;
 
 class GoogleClientImpl implements GoogleClient {
@@ -15,18 +14,7 @@ class GoogleClientImpl implements GoogleClient {
     @Override
     public String getGoogleHealth() {
 
-        String response;
-
-        try {
-
-            response = restOperations.getForObject("/health", String.class);
-
-        } catch (HttpStatusCodeException e) {
-
-            throw new GoogleClientException(e.getMessage(), e.getRawStatusCode());
-        }
-
-        return response;
+        return restOperations.getForObject("/health", String.class);
     }
 
     @Override

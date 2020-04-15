@@ -10,21 +10,21 @@ import org.springframework.web.client.HttpStatusCodeException;
 @Component
 public class ExceptionHandlerAdvice {
 
-    @Around("execution(String com.matthenry87.restclients.privateresttemplate.GoogleClient.getGoogleMaps())")
-    public String handleGoogleClientException(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    @Around("execution(* com.matthenry87.restclients.privateresttemplate.GoogleClient.*())")
+    public Object handleGoogleClientException(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
-        String string;
+        Object object;
 
         try {
 
-            string = (String) proceedingJoinPoint.proceed();
+            object = proceedingJoinPoint.proceed();
 
         } catch (HttpStatusCodeException e) {
 
             throw new GoogleClientException(e.getMessage(), e.getRawStatusCode());
         }
 
-        return string;
+        return object;
     }
 
 }

@@ -8,20 +8,20 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class ClientRunner {
 
-    private final RestTemplate googleClient2;
-    private final RestTemplate githubClient;
+    private final RestTemplate googleRestTemplate;
+    private final RestTemplate githubRestTemplate;
 
-    public ClientRunner(RestTemplate googleClient2, RestTemplate githubClient) {
+    public ClientRunner(RestTemplate googleRestTemplate, RestTemplate githubRestTemplate) {
 
-        this.googleClient2 = googleClient2;
-        this.githubClient = githubClient;
+        this.googleRestTemplate = googleRestTemplate;
+        this.githubRestTemplate = githubRestTemplate;
     }
 
     String getGoogleHelp() {
 
         try {
 
-            return googleClient2.getForObject("/health", String.class);
+            return googleRestTemplate.getForObject("/health", String.class);
 
         } catch (HttpStatusCodeException e) {
 
@@ -33,7 +33,7 @@ public class ClientRunner {
 
         try {
 
-            return githubClient.getForObject("/health", String.class);
+            return githubRestTemplate.getForObject("/health", String.class);
 
         } catch (HttpStatusCodeException e) {
 
