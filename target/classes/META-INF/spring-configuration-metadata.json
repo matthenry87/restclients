@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "googleclient",
+      "type": "com.matthenry87.restclients.privateresttemplate.GoogleClientConfig",
+      "sourceType": "com.matthenry87.restclients.privateresttemplate.GoogleClientConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
